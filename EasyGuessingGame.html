@@ -1,0 +1,131 @@
+<html>
+
+    <html lang="en-us">
+        <head>
+          <meta charset="UTF-8">
+          <title>Random Guessing Game</title>
+          <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+        </head>
+<body>
+
+        
+        
+    <div id = "form">
+            <h1>The Guessing Game</h1>
+            <h2>Guess what letter I'm thinking of?</h2>
+            <p>Wins: </p><span id ="wins"></span>
+            <p>Losses: <p><span id ="losses"></span>
+            <p>Guesses Left: </p><span id ="numberGuessesLeft"></span>
+            <p>Your guesses so far:</p><span id ="yourGuessSoFar"></span>
+
+        
+
+        <!-- <label for "guessField">Enter a guess: </label><input type="text" id="guessField"
+        class="guessField">
+        <input type="submit" value="Submit guess" class="guessSubmit"> -->
+
+
+    </div>
+
+    
+<script>
+
+    // Variables for the game
+    var wins = 0;
+    var losses = 0;
+    var numberGuessesLeft = 10;
+    var yourGuessSoFar = [];
+    var computerChoice;
+    var userChoice;
+   
+    
+
+//    Computer random letter selection stored in variable
+//     (Computer choice)
+
+
+    // function StartGame();
+
+   
+    var letters = "abcdefghijklmnopqrstuvvwxyz".split("");
+    var randomLetter = letters[Math.floor(Math.random() * 26)];
+    var computerChoice = randomLetter;
+
+//Make sure correct keys, onkeyup, change to lowercase
+// UserChoice makes choice from keyboard
+
+    //function MakeSureCorrect () {
+
+    document.onkeypress = function(event) {
+    
+    var userChoice = String.fromCharCode(event.keyCode).toLowerCase();
+        console.log(event);
+
+
+        // } else if (yourGuess.indexOf(userChoice) >=0) {
+		// 		alert("You already guessed that!");
+        
+    // If guesses correctly
+    
+        if 
+            (userChoice === computerChoice) {
+            wins += 1; //wins = wins + 1
+            alert ("You Win");
+            document.getElementById("wins").innerHTML= wins;
+            resetGame();
+            
+        //If guesses incorrectly
+
+        } else {
+            numberGuessesLeft = numberGuessesLeft - 1;
+            alert ("Wrong choice, try again");
+            document.getElementById("numberGuessesLeft").innerHTML = numberGuessesLeft;
+            yourGuessSoFar.push(userChoice);
+                console.log (yourGuessSoFar);
+    
+            // for loop here
+            for (var i = 0; i < yourGuessesSoFar.length; i++) {
+                    console.log(guessesSoFar[i]);
+            $('#yourGuessSoFar').append(yourGuessSoFar[i]); 
+
+            }
+
+    }
+
+
+        // Functions
+
+        function resetGame () {
+            numberGuessesLeft = 10;
+            yourGuessSoFar = []; // resets array
+            document.getElementById("numberGuessesLeft").innerHTML = numberGuessesLeft;
+            document.getElementById("yourGuessSoFar").innerHTML = yourGuessSoFar;
+            StartGame();
+        }
+
+        // function noGuessesLeft () {
+        //     if (guessesLeft === 0) {
+        //         alert("YOU LOSE");
+        //         losses = losses +1;
+        //         resetGame();
+        //     } else {
+        //         alert("Try Again");
+        //         document.getElementById("losses").innerHTML = losses;
+        //         CheckGame ();
+        //     }
+          
+    
+            
+        // }
+
+    }
+        //}
+
+ 
+          
+</script>
+</body>
+</html>

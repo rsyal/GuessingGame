@@ -1,0 +1,46 @@
+PseudoCode
+
+Create HTML
+
+Make variables
+    wins (start at 0)
+    Losses (start at 0)
+    Guesses Left (10 total)
+    Your guesses so far (will be an array that gets added to)
+    Computer Letter Choice
+
+
+Create Functions
+    Start/Play Game with event.keycode
+    MakeSureCorrect
+    No Guesses Left
+    Reset Game
+
+Start Game
+
+Computer random letter selection stored in variable
+    (Computer choice)
+
+User makes letter selection from keyboard
+    (User Choice)
+    make sure lower case
+    make sure only picks letters and not other keys
+    make sure user does not guess same letter
+
+    If user is correct
+        Alert "You Win"
+        add one point to wins
+        reset game by making computer chose new letter
+
+    (else statement) user is wrong
+        Alert "Wrong choice, try again"
+        let know how many guesess left (guesses left - 1)
+        list of guesses so far
+
+    If no more guesses left (guesses left = 0)
+			Alert "You Lose"
+			Add 1 to Losses.
+			reset game by making computer choose new letter. 
+
+
+    
